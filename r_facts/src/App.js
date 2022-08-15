@@ -4,10 +4,16 @@ import Header from './Header'
 import Main from './Main'
 
 function App() {
+  const[darkMode, setDarkMode] = React.useState(true)
+
+    function toggleDarkMode() {
+      setDarkMode(prevMode => !prevMode)
+      }
+
   return (
     <>
-        <Header />      
-        <Main />
+        <Header darkMode = {darkMode} toggleDarkMode = {toggleDarkMode}/>      
+        <Main darkMode = {darkMode}/>
     </>
   );
 }
